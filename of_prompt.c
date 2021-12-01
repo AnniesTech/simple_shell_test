@@ -1,7 +1,7 @@
 #include "main.h"
-void prompt(void)
+char **prompt(void)
 {
-    char *string = "# ", *str;
+    char *string = "DANA# ", *str = NULL, **split_word = NULL;
     size_t len = 0;
     int caracteres;
 
@@ -12,7 +12,7 @@ void prompt(void)
         write(STDOUT_FILENO, string, _strlen(string));
         caracteres = getline(&str, &len, stdin);
         /* write(STDIN_FILENO, str, caracteres);*/
-        if (getline(&str, &len, stdin) == -1)
+        if (caracteres == -1)
         {
             if (caracteres == EOF)
             {
@@ -24,5 +24,10 @@ void prompt(void)
                 exit(EXIT_FAILURE);
             }
         }
+        split_word = token_1(str);
+        free(str);
+        executable(split_word);
+        
     }
+    return (split_word);
 }
