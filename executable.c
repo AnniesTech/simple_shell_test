@@ -14,7 +14,8 @@ int executable(char **args)
     {
         if (execve(args[0], args, NULL) == -1)
         {
-            perror("Error");
+            perror("Couldn't execute the program");
+            exit(EXIT_FAILURE);
         }
     }
     else
