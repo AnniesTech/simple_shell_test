@@ -1,4 +1,9 @@
 #include "main.h"
+/**
+ * token_1 - Function that tokenize the user string.
+ * @str: user string. 
+ * Return: the split of the string. 
+ */
 char **token_1(char *str)
 {
     unsigned int wc = word_counter(str), pos = 0;
