@@ -18,48 +18,20 @@ int _strlen(char *n)
 }
 
 /**
- * _strdup - Function that returns the duplicate of a string
- * @str: string
- * Return: the result
+ * _strcmp - Function to compares two strings.
+ * @s1: String one
+ * @s2: String two
+ * Return: the subtraction of the strings.
  */
 
-char *_strdup(char *str)
+int _strcmp(char *s1, char *s2)
 {
-	int len = _strlen(str), i;
-	char *dest;
-
-	if (str == NULL)
-	{
-		return (NULL);
-	}
-	dest = malloc(sizeof(char) * (len + 1));
-	if (dest == NULL)
-	{
-		free(dest);
-		return (NULL);
-	}
-	for (i = 0; i < len + 1; i++)
-	{
-		dest[i] = str[i];
-	}
-	return (dest);
+while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+{
+s1++;
+s2++;
 }
-
-/**
- * grid_size - Checks for the size of the grid
- * @grid: grid
- * Return: the result
- */
-
-int grid_size(char **grid)
-{
-	int i = 0;
-
-	while (grid[i])
-	{
-		i++;
-	}
-	return (i);
+return (*s1 - *s2);
 }
 
 /**

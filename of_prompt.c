@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * prompt - Function whit the infinite loop.
+ * prompt - Function with the infinite loop.
  * Return: void.
  */
 void prompt(void)
@@ -24,7 +24,7 @@ void prompt(void)
 			pos++;
 		}
 		/* ejecutar el proceso */
-		status = executable(args);
+		status = is_built_in(args);
 		/* liberar la memoria */
 		free(str);
 		free(args);
