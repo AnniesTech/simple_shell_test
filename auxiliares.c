@@ -55,10 +55,9 @@ int grid_size(char **grid)
 {
 	int i = 0;
 
-	while (*grid)
+	while (grid[i])
 	{
 		i++;
-		grid++;
 	}
 	return (i);
 }
@@ -66,14 +65,13 @@ int grid_size(char **grid)
 /**
  * free_grid - Frees the space on memory for the grid
  * @grid: grid
- * @height: height
  */
 
-void free_grid(char **grid, int height)
+void free_grid(char **grid)
 {
 	int i;
 
-	for (i = 0; i < height; i++)
+	for (i = 0; grid[i] != NULL; i++)
 		free(grid[i]);
 	free(grid);
 }

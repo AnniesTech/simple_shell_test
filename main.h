@@ -12,7 +12,7 @@
 int _strlen(char *n);
 char *_strdup(char *str);
 int grid_size(char **grid);
-void free_grid(char **grid, int height);
+void free_grid(char **grid);
 /* Prototypes */
 void prompt(void);
 char *read_line(void);

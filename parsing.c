@@ -14,16 +14,20 @@ char **token_1(char *str)
 	printf("%d\n", wc);
 	split =  malloc(sizeof(char *) * wc);
 
+	if (split == NULL)
+		{
+			free(split);
+			exit(EXIT_FAILURE);
+		}
+
 	split[pos] = strtok(str, " \n\t");
 	pos++;
 
 	while (pos < wc)
 	{
 		split[pos] = strtok(NULL, " \n\t");
-		/*printf("%s\n", split[pos]);*/
 		pos++;
 	}
 	split[pos] = NULL;
-
 	return (split);
 }

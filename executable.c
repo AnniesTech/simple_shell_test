@@ -20,14 +20,17 @@ int executable(char **args)
 	{
 		if (execve(args[0], args, NULL) == -1)
 		{
-			perror("Couldn't execute the program");
+			perror("./hsh");
 			exit(EXIT_FAILURE);
+		}
+		else
+		{
+			exit(EXIT_SUCCESS);
 		}
 	}
 	else
 	{
 		wait(&status);
-		printf("Waiting for child");
 	}
 	return (1);
 }
