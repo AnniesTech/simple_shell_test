@@ -9,7 +9,7 @@
 
 int word_counter(char *str)
 {
-	unsigned int wc;
+	unsigned int wc = 0;
 	int estado = 0;
 
 	while (*str)

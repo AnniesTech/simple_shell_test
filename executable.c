@@ -15,7 +15,6 @@ int executable(char **args)
 	if (pid == -1)
 	{
 		perror("No such file or directory\n");
-		exit(EXIT_FAILURE);
 	}
 	if (pid == 0)
 	{
