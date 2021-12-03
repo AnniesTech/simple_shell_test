@@ -7,36 +7,38 @@ void prompt(void)
 {
 	char *string = "DANA# ", *str = NULL, **args = NULL;
 	size_t len = 0;
-	int pos = 0, status = 0;
+	int pos = 0, status = 0, mode = 0;
 	ssize_t caracteres = 0;
 
-	while (caracteres != EOF)
+	while (1)
 	{
-
-		write(STDOUT_FILENO, string, _strlen(string));
-		/*str = read_line();*/
-		caracteres = getline(&str, &len, stdin);
-	if (caracteres == -1)
-	{
-		if (caracteres == EOF)
+		/*mode = isatty(STDIN_FILENO);
+		if (mode == 1)
+		{*/
+			write(STDOUT_FILENO, string, _strlen(string));
+			/*str = read_line();*/
+			caracteres = getline(&str, &len, stdin);
+		if (caracteres == -1)
 		{
-			exit(EXIT_SUCCESS);
+			if (caracteres == EOF)
+			{
+				exit(EXIT_SUCCESS);
+			}
+			else
+			{
+				perror("No such file or directory\n");
+				exit(EXIT_FAILURE);
+			}
 		}
-		else
-		{
-			perror("No such file or directory\n");
-			exit(EXIT_FAILURE);
-		}
-	}
-		args = token_1(str);
-		while (args[pos])
-		{
-			printf("%s\n", args[pos]);
-			pos++;
-		}
-		/*status = executable(args);*/
-		status = is_built_in(args);
-
-		free_grid(args);
+			args = token_1(str);
+			while (args[pos])
+			{
+				printf("%s\n", args[pos]);
+				pos++;
+			}
+			/*status = executable(args);*/
+			status = is_built_in(args);
+			free_grid(args);
+		
 	}
 }

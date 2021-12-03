@@ -12,7 +12,7 @@ char **token_1(char *str)
 
 	wc = word_counter(str);
 	printf("%d\n", wc);
-	split =  malloc(sizeof(char *) * wc);
+	split =  malloc(sizeof(char *) * (wc + 2));
 
 	if (split == NULL)
 		{
@@ -29,7 +29,5 @@ char **token_1(char *str)
 		pos++;
 	}
 	split[pos] = NULL;
-	free(str);
-	free_grid(split);
 	return (split);
 }
