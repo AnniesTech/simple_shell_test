@@ -8,6 +8,7 @@
 #include <string.h>
 #include <sys/wait.h>
 
+
 /* Auxiliares */
 int _strlen(char *n);
 int _strcmp(char *s1, char *s2);
@@ -24,5 +25,23 @@ int word_counter(char *n);
 int our_exit(char **args);
 int our_env(char **args);
 int is_built_in(char **args);
+char *get_path(void);
+
+/* Structures */
+/*typedef struct is_built_in {
+    char *built_name;
+    char *real_name;
+} built_in;*/
+
+typedef struct built_in_func {
+    char *name;
+    int (*builtin_func)(char **args);
+} built_in_func;
+
+static const built_in_func bi[] = {
+    {"exit", our_exit},
+    {"env", our_env},
+    {NULL, NULL},
+};
 
 #endif

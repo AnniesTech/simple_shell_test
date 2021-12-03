@@ -9,7 +9,7 @@
 int executable(char **args)
 {
 	pid_t pid;
-	int status;
+	int status = 0;
 
 	pid = fork();
 	if (pid == -1)
@@ -22,10 +22,6 @@ int executable(char **args)
 		{
 			perror("./hsh");
 			exit(EXIT_FAILURE);
-		}
-		else
-		{
-			exit(EXIT_SUCCESS);
 		}
 	}
 	else

@@ -1,22 +1,27 @@
 #include "main.h"
 int is_built_in(char **args)
 {
-    char *bi[] = {
+    int (*func)(char **args);
+    /*char *bi[] = {
         "exit",
         "env",
     };
     int (*builtin_func[])(char **args) = {
         &our_exit,
         &our_env,
-    };
-    int index = 0, sub = 0;
+    };*/
+    int index = 0, sub = 0, funcion = 0;
 
-    for(; index < word_counter(*args); index++)
+
+    for(; bi[index].name != NULL; index++)
     {
-        sub = (_strcmp(args[0], bi[index]));
+        sub = (_strcmp(args[0], bi[index].name));
         if (sub == 0)
         {
-            return ((*builtin_func[index])(args));
+            printf("En el built in");
+            func = bi[index].builtin_func;
+            funcion = func(args);
+            return (funcion);
         }
     }
     return (executable(args));

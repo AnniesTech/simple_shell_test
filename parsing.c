@@ -16,7 +16,7 @@ char **token_1(char *str)
 
 	if (split == NULL)
 		{
-			free(split);
+			free_grid(split);
 			exit(EXIT_FAILURE);
 		}
 
@@ -29,5 +29,7 @@ char **token_1(char *str)
 		pos++;
 	}
 	split[pos] = NULL;
+	free(str);
+	free_grid(split);
 	return (split);
 }
