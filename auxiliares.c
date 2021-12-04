@@ -18,6 +18,23 @@ int _strlen(char *n)
 }
 
 /**
+ * _strncmp - Function to compares two strings and n bytes.
+ * @s1: String one
+ * @s2: String two
+ * Return: the subtraction of the strings.
+ */
+
+int _strncmp(char *s1, char *s2, size_t n)
+{
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
+}
+
+/**
  * _strcmp - Function to compares two strings.
  * @s1: String one
  * @s2: String two

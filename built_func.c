@@ -1,6 +1,7 @@
 #include "main.h"
 int our_exit(char **args)
 {
+    free_grid(args);
     exit(EXIT_SUCCESS);
 }
 

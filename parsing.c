@@ -6,7 +6,7 @@
  */
 char **token_1(char *str)
 {
-	unsigned int wc, pos = 0;
+	unsigned int wc = 0, pos = 0;
 	char **split = NULL;
 
 
@@ -16,7 +16,7 @@ char **token_1(char *str)
 
 	if (split == NULL)
 		{
-			free_grid(split);
+			free(split);
 			exit(EXIT_FAILURE);
 		}
 

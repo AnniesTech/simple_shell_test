@@ -5,19 +5,22 @@ char *get_path(void)
     char *path = NULL;
     int index = 0;
 
-    path = malloc(sizeof(char *) * word_counter(*env));
-    if (path == NULL)
+    while (*env)
     {
-        free(path);
-    }
-
-    while (env)
-    {
-        if ((_strcmp(*env, "PATH")) == 0)
+        if ((strncmp(*env, "PATH", 4)) == 0)
         {
-            
+            path = *env;
+            env++;
+        }
+        else
+        {
+            path = malloc(sizeof(char *) * (_strlen(*env) + 1));
+            if (path == NULL)
+            {
+                free(path);
+                return (NULL);
+            }
         }
     }
-    printf("%s\n", path);
     return (path);
 }
