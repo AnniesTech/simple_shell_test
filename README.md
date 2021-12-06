@@ -62,8 +62,8 @@ No bugs known til the date. This section will be updated when needed.
 + <a href= "https://brennan.io/2015/01/16/write-a-shell-in-c/" target="_blank">Stephen Brennan’s blog</a>
 + <a href= "https://man7.org/tlpi/" target="_blank"> The Linux Programming Interface</a>
 
-You can see more information consulting the **man_printf**, using this command:
-**man ./man_printf**
+You can see more information consulting the **man_1_simple_shell**, using this command:
+**man ./man_1_simple_shell**
 
 ### Authors 👨‍💻✒
 
