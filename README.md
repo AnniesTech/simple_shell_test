@@ -29,7 +29,7 @@ This mode has an infinite loop that prints the prompt of our Shell (DANA#) and r
 
 ## Example
 
-** Non-interactive mode **
+**Non-interactive mode**
 
     root@LAPTOP-NC133400:~/simple_shell_test# echo "/bin/ls" | ./hsh
     DANA# 1
@@ -39,7 +39,7 @@ This mode has an infinite loop that prints the prompt of our Shell (DANA#) and r
     DANA# root@LAPTOP-NC133400:~/simple_shell_test# 
 
 
-** Interactive mode **
+**Interactive mode**
 
     root@LAPTOP-NC133400:~/simple_shell_test# ./hsh
     DANA# /bin/ls
@@ -59,8 +59,8 @@ No bugs known til the date. This section will be updated when needed.
 
 
 ## Documentation
-+ <a href= "https://brennan.io/2015/01/16/write-a-shell-in-c/">
-+ <a href= "https://man7.org/tlpi/">
++ <a href= "https://brennan.io/2015/01/16/write-a-shell-in-c/" target="_blank">Stephen Brennan’s blog</a>
++ <a href= "https://man7.org/tlpi/" target="_blank"> The Linux Programming Interface</a>
 
 You can see more information consulting the **man_printf**, using this command:
 **man ./man_printf**
@@ -74,4 +74,4 @@ You can see more information consulting the **man_printf**, using this command:
 #### This project was made for: <a href="https://www.holbertonschool.com/" target="_blank">Holberton School </a>
 
 <a href="https://www.holbertonschool.com/">
-<img src="https://thumbs.bfldr.com/at/x9m6pnbbn3cnnbr7kk4pr7mk/v/29396102?expiry=1637084372&fit=bounds&height=800&sig=OGMxNzBjYTgzMzE0YTNhY2YzNzIyYjgxMWJlNmQ5NjIxZjg2ZWI2Nw%3D%3D&width=1100" width=150" height="150" alt="Holberton School"  /></a>
+<img src="https://blog.holbertonschool.com/wp-content/uploads/2019/04/instagram_feed180.jpg" width=150" height="150" alt="Holberton School"  /></a>
