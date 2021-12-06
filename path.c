@@ -10,8 +10,6 @@ char *get_path(char **args)
 {
     char **env = NULL, **parsing = NULL;
     char *path = NULL, *concat_path = NULL;
-    int pos = 0;
-    struct stat st;
 
     env = environ;
     while (*env)

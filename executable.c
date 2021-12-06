@@ -10,7 +10,14 @@ int executable(char **args)
 {
 	pid_t pid;
 	int status = 0;
+	struct stat st;
 
+	if(stat(args[0], &st) != 0))
+	{
+		perror("No such file or directory\n");
+		return (-1);
+	}
+	else
 	pid = fork();
 	if (pid == -1)
 	{
@@ -23,9 +30,9 @@ int executable(char **args)
 			perror("./hsh");
 			// free_grid(args);
 			/* free(args[0]); */
-			printf("Me wa salir\n");
 			return (-1);
 		}
+
 	}
 	else
 	{

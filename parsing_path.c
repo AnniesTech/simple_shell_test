@@ -25,5 +25,6 @@ char **token_2(char *path)
         pos++;
     }
     split_path[pos] = NULL;
+    /* free(path)*/
     return(split_path);
 }

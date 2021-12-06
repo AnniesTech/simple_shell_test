@@ -24,7 +24,8 @@ int our_env(char **args)
 
 	while (environ[i])
 	{
-		write(STDOUT_FILENO, environ[i], _strlen(*environ));
+		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
+		write(STDOUT_FILENO, "\n", 1);
 		i++;
 	}
 	return (0);
