@@ -12,12 +12,6 @@ int executable(char **args)
 	int status = 0;
 	struct stat st;
 
-	if(stat(args[0], &st) != 0))
-	{
-		perror("No such file or directory\n");
-		return (-1);
-	}
-	else
 	pid = fork();
 	if (pid == -1)
 	{
@@ -32,7 +26,6 @@ int executable(char **args)
 			/* free(args[0]); */
 			return (-1);
 		}
-
 	}
 	else
 	{

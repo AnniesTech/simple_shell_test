@@ -2,17 +2,16 @@
 char *concat_path(char *path, char **args)
 {
     char **parsing = NULL, *concat_path = NULL;
-    struct stat st;
-    unsigned int pos = 0;
+    int len = 0;
+    unsigned int pos1 = 0, pos2 = 0;
 
+    len = (_strlen(path) + _strlen(*args));
+    printf("%d\n", len);
     parsing = token_2(path);
-    while (parsing[pos])
+    while (parsing[pos1])
     {
-        concat_path = (_strcat(parsing[pos], args[0]));
-        if (stat(concat_path, &st) == 0)
-            printf("%s: Found.\n", concat_path);
-        else
-            printf("%s: Not found.\n", concat_path);
+        concat_path = (_strcat(parsing[pos1], args[0]));
+        pos1++;
     }
     return (concat_path);
 }

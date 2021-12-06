@@ -2,7 +2,8 @@
 int is_built_in(char **args)
 {
     int (*func)(char **args);
-    int index = 0, sub = 0, funcion = 0;
+    int index = 0, pos = 0, sub = 0, funcion = 0;
+    char **command = NULL;
 
     if (args[0] == NULL)
     {
@@ -17,6 +18,23 @@ int is_built_in(char **args)
             funcion = func(args);
             return (funcion);
         }
+        else if (sub != 0)
+        {
+            while (args[pos])
+            {
+                if (args[pos] == "/")
+                {
+                    return(executable(args));
+                    break;
+                }
+                else
+                {
+                    command = concat_path(get_path(args), args);
+                    return(executable(command));
+                }
+                pos++;
+            }
+        }
     }
-    return (executable(args));
+    return (1);
 }

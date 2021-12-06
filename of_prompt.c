@@ -5,9 +5,9 @@
  */
 void prompt(void)
 {
-	char *string = "DANA# ", *str = NULL, **args = NULL, *path = NULL;
+	char *string = "DANA# ", *str = NULL, **args = NULL;
 	size_t len = 0;
-	int pos = 0, status = 0, mode = 0;
+	int status = 0, mode = 0;
 	ssize_t caracteres = 0;
 
 	while (1)
@@ -22,7 +22,6 @@ void prompt(void)
 			/* free(str); */
 			return;
 		}
-		path = get_path(args);
 		/*free(str);*/
 		/*printf("%s\n", get_path());*/
 		/* 		free_grid(args);*/
