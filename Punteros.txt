@@ -1,0 +1,18 @@
+Ctrl + D Sin memory leaks
+split malloc falla -> Sin memory leaks
+
+
+152 bytes un 2 blocks
+4 allocs 2 frees
+
+
+
+
+
+
+Pendiente wc + 2 en malloc de split
+
+
+split = 24
+str = 8
+

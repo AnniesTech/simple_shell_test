@@ -9,16 +9,15 @@ char **token_1(char *str)
 	unsigned int wc = 0, pos = 0;
 	char **split = NULL;
 
-
 	wc = word_counter(str);
 	printf("%d\n", wc);
-	split =  malloc(sizeof(char *) * (wc + 2));
-
+	split = malloc(sizeof(char *) * (wc + 1));
 	if (split == NULL)
-		{
-			free(split);
-			exit(EXIT_FAILURE);
-		}
+	{
+		/*free(str);
+		free(split);*/
+		exit(EXIT_FAILURE);
+	}
 
 	split[pos] = strtok(str, " \n\t");
 	pos++;

@@ -21,7 +21,10 @@ int executable(char **args)
 		if (execve(args[0], args, NULL) == -1)
 		{
 			perror("./hsh");
-			exit(EXIT_FAILURE);
+			// free_grid(args);
+			/* free(args[0]); */
+			printf("Me wa salir\n");
+			return (-1);
 		}
 	}
 	else

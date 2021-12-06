@@ -21,6 +21,7 @@ int _strlen(char *n)
  * _strncmp - Function to compares two strings and n bytes.
  * @s1: String one
  * @s2: String two
+ * @n: the size of the string.
  * Return: the subtraction of the strings.
  */
 
@@ -30,8 +31,16 @@ int _strncmp(char *s1, char *s2, size_t n)
 	{
 		s1++;
 		s2++;
+		n--;
 	}
-	return (*s1 - *s2);
+	while (n > 0)
+	{
+		if (*s1 != *s2)
+			return ((unsigned char) *s1 - (unsigned char) *s2);
+		if (*s1 == '\0')
+			return (0);
+	}
+	return (0);
 }
 
 /**
@@ -43,12 +52,12 @@ int _strncmp(char *s1, char *s2, size_t n)
 
 int _strcmp(char *s1, char *s2)
 {
-while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
-{
-s1++;
-s2++;
-}
-return (*s1 - *s2);
+	while (*s1 != '\0' && *s2 != '\0' && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
 
 /**
@@ -58,9 +67,30 @@ return (*s1 - *s2);
 
 void free_grid(char **grid)
 {
-	int i;
+	int i = 0;
 
-	for (i = 0; grid[i] != NULL; i++)
+	for (i = 0; grid[i]; i++)
 		free(grid[i]);
 	free(grid);
+}
+
+/**
+ * _strcpy - Function to copy paste one string.
+ * @dest: Destiny
+ * @src: Source
+ * Return: Dest.
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int m = 0;
+	int count = 0;
+
+	count = _strlen(src);
+
+	for (; m <= count; m++)
+	{
+		dest[m] = src[m];
+	}
+	return (dest);
 }
