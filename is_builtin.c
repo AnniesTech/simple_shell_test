@@ -25,11 +25,10 @@ int is_built_in(char **args)
                 if (args[pos] == "/")
                 {
                     return(executable(args));
-                    break;
                 }
                 else
                 {
-                    command = concat_path(get_path(args), args);
+                    *command = concat_path(get_path(args), args);
                     return(executable(command));
                 }
                 pos++;
