@@ -16,5 +16,6 @@ char *real_path(char *find_path)
         index1++;
         index2++;
     }
+    /*free(find_path);*/
     return(path);
 }

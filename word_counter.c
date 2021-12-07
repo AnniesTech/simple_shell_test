@@ -7,14 +7,14 @@
  * Return: the result
  */
 
-int word_counter(char *str)
+int word_counter(char *str, char *delim)
 {
 	unsigned int wc = 0;
 	int estado = 0;
 
 	while (*str)
 	{
-		if (*str == ' ')
+		if (*str == *delim)
 		{
 			estado = 0;
 		}

@@ -1,30 +1,31 @@
 #include "main.h"
-char **concat_path(char *path, char **args)
+char *concat_path(char *path, char **args)
 {
-    char **parsing = NULL, **command = NULL;
+    char **parsing = NULL, *command = NULL;
     int len = 0;
-    unsigned int pos1 = 0, pos2 = 0;
+    struct stat st;
 
-    printf("En la función");
-    len = (_strlen(path) + _strlen(*args));
-    command = malloc(sizeof(char *) * len);
-    if(command == NULL)
+    parsing = token_1(path, ":");
+    for (len = 0; parsing[len]; len++)
     {
-        perror("Memory error in concat the path");
-        return(NULL);
+        printf("%s\n", parsing[len]);
+        command = malloc(sizeof(char) * (_strlen(parsing[len]) + _strlen(args[0]) + 2));
+        if (command == NULL)
+        {
+            perror("Memory error in concat the path");
+            return (NULL);
+        }
+        command = _strcpy(command, parsing[len]);
+        command = _strcat(command, "/");
+        command = _strcat(command, args[0]);
+        /*command = _strcat(command, NULL);*/
+        if (stat(command, &st) == 0)
+        {
+            /*command[len] = 0;*/
+            printf("%s\n", command);
+            return(command);
+        }
+        free(command);
     }
-    parsing = token_2(path);
-    while (*parsing)
-    {
-        _strcat(*command, *parsing);
-        pos1++;
-    }
-    command[pos1] = "/";
-    while (*args)
-    {
-        _strcat(*command, *args);
-        pos1++;
-    }
-    command[pos1] = '\0';
-    return (command);
+    return (NULL);
 }

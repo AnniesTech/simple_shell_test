@@ -23,15 +23,15 @@ extern char **environ;
 /* Prototypes */
 void prompt(void);
 char *read_line(void);
-char **token_1(char *str);
+char **token_1(char *str, char *delim);
 int executable(char **args);
-int word_counter(char *n);
+int word_counter(char *n, char *delim);
 int our_exit(char **args);
 int our_env(char **args);
 int is_built_in(char **args);
 char *get_path(char **args);
 char **token_2(char *path);
-char **concat_path(char *path, char **args);
+char *concat_path(char *path, char **args);
 char *real_path(char *find_path);
 
 /* Structures */

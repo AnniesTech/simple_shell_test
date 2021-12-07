@@ -10,7 +10,6 @@ int executable(char **args)
 {
 	pid_t pid;
 	int status = 0;
-	struct stat st;
 
 	pid = fork();
 	if (pid == -1)

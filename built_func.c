@@ -22,6 +22,7 @@ int our_env(char **args)
 {
 	int i = 0;
 
+	printf("es mi propio env\n");
 	while (environ[i])
 	{
 		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));

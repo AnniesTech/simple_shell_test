@@ -14,7 +14,7 @@ void prompt(void)
 	{
 		write(STDOUT_FILENO, string, _strlen(string));
 		str = read_line();
-		args = token_1(str);
+		args = token_1(str, " \n\t");
 		status = is_built_in(args);
 		if (status == -1)
 		{
