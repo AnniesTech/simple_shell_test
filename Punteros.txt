@@ -16,3 +16,15 @@ Pendiente wc + 2 en malloc de split
 split = 24
 str = 8
 
+exit: double free: quedó en 0.
+env: double free: quedó en 0.
+executable: se liberó args double: quedó en 0.
+_strcat: se liberó src. ??.
+path: si NULL se liberó find_path.
+_strlen: se liberó n con un free normi: se dañó.
+
+
+str
+delim
+split
+

@@ -16,37 +16,18 @@ char *get_path(char **args)
     {
         if ((_strncmp(*env, "PATH", 4)) == 0)
         {
-            find_path = malloc(sizeof(char *) * (_strlen(*env) + 1));
+            find_path = malloc(sizeof(char) * (_strlen(*env) + 1));
             if (find_path == NULL)
             {
                 perror("Memory error in path");
+                free(find_path);
                 return (NULL);
             }
             _strcpy(find_path, *env);
-            return(real_path(find_path));
+            return (real_path(find_path));
         }
         env++;
     }
+    free_grid(args);
     return (NULL);
 }
-
-/*
-int main(int argc, char *argv[])
-{
-    unsigned int index;
-    struct stat st;
-
-    if (argc < 2)
-    {
-        printf("Need more arguments\n");
-        return (1);
-    }
-    for (index = 1; argv[index] != NULL; index++)
-    {
-        if (stat(argv[index], &st) == 0)
-            printf("%s: Found.\n", argv[index]);
-        else
-            printf("%s: Not found.\n", argv[index]);
-    }
-    return (0);
-*/

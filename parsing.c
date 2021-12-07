@@ -10,25 +10,21 @@ char **token_1(char *str, char *delim)
 	char **split = NULL;
 
 	wc = word_counter(str, delim);
-	printf("%d\n", wc);
 	split = malloc(sizeof(char *) * (wc + 1));
 	if (split == NULL)
 	{
-		/*free(str);
-		free(split);*/
-		/*exit(EXIT_FAILURE);*/
+		free(split);
 		perror("Memory error in the parsing process\n");
-		return(NULL);
+		return (NULL);
 	}
-
-	split[pos] = strtok(str, delim);
+	split[pos] = _strdup(strtok(str, delim));
 	pos++;
-
 	while (pos < wc)
 	{
-		split[pos] = strtok(NULL, delim);
+		split[pos] = strdup(strtok(NULL, delim));
 		pos++;
 	}
 	split[pos] = NULL;
+	free(str);
 	return (split);
 }

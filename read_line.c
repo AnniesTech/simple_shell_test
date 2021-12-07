@@ -16,11 +16,13 @@ char *read_line(void)
 	{
 		if (caracteres == EOF)
 		{
+			free(str);
 			exit(EXIT_SUCCESS);
 		}
 		else
 		{
 			perror("No such file or directory\n");
+			free(str);
 			exit(EXIT_FAILURE);
 		}
 	}

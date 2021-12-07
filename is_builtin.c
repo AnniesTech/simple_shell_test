@@ -3,7 +3,7 @@ int is_built_in(char **args)
 {
     int (*func)(char **args) = NULL;
     int index = 0, pos = 0, sub = 0, funcion = 0;
-    char **command = NULL, *path = NULL;
+    char *command = NULL, *path = NULL;
 
     if (args[0] == NULL)
     {
@@ -12,7 +12,6 @@ int is_built_in(char **args)
     for (; bi[index].name != NULL; index++)
     {
         sub = (_strcmp(args[0], bi[index].name));
-        printf("%d\n", index);
         if (sub == 0)
         {
             func = bi[index].builtin_func;
@@ -24,14 +23,14 @@ int is_built_in(char **args)
     {
         if (*args[pos] == '/')
         {
-            return (executable(args));
+            return (executable(args[0], args));
             break;
         }
         else
         {
             path = get_path(args);
-            *command = concat_path(path, args);
-            return (executable(command));
+            command = concat_path(path, args);
+            return (executable(command, args));
         }
         pos++;
     }

@@ -18,13 +18,14 @@ int grid_size(char **grid);
 void free_grid(char **grid);
 int _strncmp(char *s1, char *s2, size_t n);
 char *_strcpy(char *dest, char *src);
+char *_strdup(char *str);
 extern char **environ;
 
 /* Prototypes */
 void prompt(void);
 char *read_line(void);
 char **token_1(char *str, char *delim);
-int executable(char **args);
+int executable(char *command, char **args);
 int word_counter(char *n, char *delim);
 int our_exit(char **args);
 int our_env(char **args);

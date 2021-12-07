@@ -6,9 +6,9 @@
  * Return: the result
  */
 
-int executable(char **args)
+int executable(char *command, char **args)
 {
-	pid_t pid;
+	pid_t pid = 0;
 	int status = 0;
 
 	pid = fork();
@@ -18,13 +18,14 @@ int executable(char **args)
 	}
 	if (pid == 0)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		if (execve(command, args, NULL) == -1)
 		{
 			perror("./hsh");
-			// free_grid(args);
-			/* free(args[0]); */
+			free(command);
 			return (-1);
 		}
+		else
+			free(command);
 	}
 	else
 	{

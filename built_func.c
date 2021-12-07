@@ -8,7 +8,7 @@
 
 int our_exit(char **args)
 {
-	/*free_grid(args);*/
+	free_grid(args);
 	exit(EXIT_SUCCESS);
 }
 
@@ -22,7 +22,6 @@ int our_env(char **args)
 {
 	int i = 0;
 
-	printf("es mi propio env\n");
 	while (environ[i])
 	{
 		write(STDOUT_FILENO, environ[i], _strlen(environ[i]));
@@ -41,8 +40,8 @@ int our_env(char **args)
 
 char *_strcat(char *dest, char *src)
 {
-	int m;
-	int n;
+	int m = 0;
+	int n = 0;
 
 	for (m = 0; dest[m] != '\0'; m++)
 	{
@@ -53,4 +52,33 @@ char *_strcat(char *dest, char *src)
 		dest[m] = src[n];
 	}
 	return (dest);
+}
+
+/**
+ * _strdup - Duplicate a string with malloc
+ * @str: Pointer to the string.
+ * Return: Pointer to the new address.
+ */
+
+char *_strdup(char *str)
+{
+	int i;
+	int str_len = 0;
+	char *str2;
+
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+	str_len = _strlen(str);
+	str2 = malloc(sizeof(char) * (str_len + 1));
+	for (i = 0; i < str_len + 1; i++)
+	{
+		if (str2 == NULL)
+		{
+			return (NULL);
+		}
+		str2[i] = str[i];
+	}
+	return (str2);
 }
