@@ -9,24 +9,25 @@
 char *get_path(char **args)
 {
     char **env = NULL, **parsing = NULL;
-    char *path = NULL, *concat_path = NULL;
+    char *find_path = NULL, *concat_path = NULL;
 
     env = environ;
     while (*env)
     {
         if ((_strncmp(*env, "PATH", 4)) == 0)
         {
-            path = malloc(sizeof(char *) * (_strlen(*env) + 1));
-            if (path == NULL)
+            find_path = malloc(sizeof(char *) * (_strlen(*env) + 1));
+            if (find_path == NULL)
             {
                 perror("Memory error in path");
                 return (NULL);
             }
-            _strcpy(path, *env);
+            _strcpy(find_path, *env);
+            return(real_path(find_path));
         }
         env++;
     }
-    return (path);
+    return (NULL);
 }
 
 /*

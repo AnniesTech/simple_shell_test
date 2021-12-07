@@ -1,0 +1,20 @@
+#include "main.h"
+char *real_path(char *find_path)
+{
+    char *path = NULL;
+    unsigned int index1 = 5, index2 = 0;
+
+    path = malloc(sizeof(char) * (_strlen(find_path) + 1));
+    if (path == NULL)
+    {
+        perror("Memory error in path malloc");
+        return(NULL);
+    }
+    while (find_path[index1])
+    {
+        path[index2] = find_path[index1];
+        index1++;
+        index2++;
+    }
+    return(path);
+}

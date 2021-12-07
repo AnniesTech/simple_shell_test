@@ -1,11 +1,12 @@
 #include "main.h"
-char *concat_path(char *path, char **args)
+char **concat_path(char *path, char **args)
 {
-    char **parsing = NULL, *command = NULL;
+    char **parsing = NULL, **command = NULL;
     int len = 0;
     unsigned int pos1 = 0, pos2 = 0;
 
-    len = (_strlen(path) + _strlen(args));
+    printf("En la función");
+    len = (_strlen(path) + _strlen(*args));
     command = malloc(sizeof(char *) * len);
     if(command == NULL)
     {
@@ -13,12 +14,17 @@ char *concat_path(char *path, char **args)
         return(NULL);
     }
     parsing = token_2(path);
-    command = _strcat(*parsing, "/");
-    command = _strcat(*parsing, args);
-    while(command[pos1])
+    while (*parsing)
     {
-    printf("%s\n", command);
-    pos1++;
+        _strcat(*command, *parsing);
+        pos1++;
     }
+    command[pos1] = "/";
+    while (*args)
+    {
+        _strcat(*command, *args);
+        pos1++;
+    }
+    command[pos1] = '\0';
     return (command);
 }

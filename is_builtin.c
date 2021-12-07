@@ -3,7 +3,7 @@ int is_built_in(char **args)
 {
     int (*func)(char **args);
     int index = 0, pos = 0, sub = 0, funcion = 0;
-    char **command = NULL;
+    char **command = NULL, *path = NULL;
 
     if (args[0] == NULL)
     {
@@ -22,13 +22,16 @@ int is_built_in(char **args)
         {
             while (args[pos])
             {
-                if (args[pos] == "/")
+                if (*args[pos] == '/')
                 {
                     return(executable(args));
+                    break;
                 }
                 else
                 {
-                    *command = concat_path(get_path(args), args);
+                    printf("en el if del / \n");
+                    path = get_path(args);
+                    command = concat_path(path, args);
                     return(executable(command));
                 }
                 pos++;

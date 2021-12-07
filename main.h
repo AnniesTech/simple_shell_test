@@ -31,7 +31,8 @@ int our_env(char **args);
 int is_built_in(char **args);
 char *get_path(char **args);
 char **token_2(char *path);
-char *concat_path(char *path, char **args);
+char **concat_path(char *path, char **args);
+char *real_path(char *find_path);
 
 /* Structures */
 
