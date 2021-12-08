@@ -1,30 +1,32 @@
 #include "main.h"
+
 /**
  * token_2 - Function that tokenize the path.
  * @path: The path.
- * Return: 
+ * Return: Path parsed
  */
+
 char **token_2(char *path)
 {
-    unsigned int wc = 0, pos = 0;
+	unsigned int wc = 0, pos = 0;
 	char **split_path = NULL;
 
-    wc = word_counter(path);
-    split_path = malloc(sizeof(char *) * (wc + 1));
-    if (split_path == NULL)
-    {
-        perror("Memory error in split path");
-        return (NULL);
-    }
-    split_path[pos] = strtok(path, ":");
-    pos++;
+	wc = word_counter(path);
+	split_path = malloc(sizeof(char *) * (wc + 1));
+	if (split_path == NULL)
+	{
+		perror("Memory error in split path");
+		return (NULL);
+	}
+	split_path[pos] = strtok(path, ":");
+	pos++;
 
-    while (pos < wc)
-    {
-        split_path[pos] = strtok(NULL, ":");
-        pos++;
-    }
-    split_path[pos] = NULL;
-    /* free(path)*/
-    return(split_path);
+	while (pos < wc)
+	{
+		split_path[pos] = strtok(NULL, ":");
+		pos++;
+	}
+	split_path[pos] = NULL;
+	/* free(path)*/
+	return (split_path);
 }

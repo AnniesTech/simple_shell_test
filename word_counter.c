@@ -4,6 +4,7 @@
 /**
  * word_counter - counts each letter from the string
  *@str: string
+ *@delim: Delimeters
  * Return: the result
  */
 

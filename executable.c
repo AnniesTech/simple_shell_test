@@ -3,6 +3,7 @@
 /**
  * executable - Executes the child process
  * @args: arguments
+ * @command: command passed
  * Return: the result
  */
 

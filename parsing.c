@@ -2,6 +2,7 @@
 /**
  * token_1 - Function that tokenize the user string.
  * @str: user string.
+ * @delim: delimeters
  * Return: the split of the string.
  */
 char **token_1(char *str, char *delim)

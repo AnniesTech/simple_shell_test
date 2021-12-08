@@ -1,6 +1,6 @@
 # Simple Shell
 
-Simple Linux Shell program. 
+Simple Linux Shell program.
 
 the shell is a program that takes commands from the keyboard and passes them to the machine to execute them through the kernel to perform. We can interact with this program through the terminal.
 
@@ -10,7 +10,7 @@ the shell is a program that takes commands from the keyboard and passes them to 
 
 + You must download all the files contained in this repository in order for this program to work.
 
-+ This program must be compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o 
++ This program must be compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o
 
 You can use the flag -o at the end of the command to give the shell a executable name that you will remember.
 'gcc -Wall -Werror -Wextra -pedantic *.c -o my_shell'. This way you can execute the program with './my_shell'
@@ -20,11 +20,12 @@ You can use the flag -o at the end of the command to give the shell a executable
 
 This Shell has 2 modes of execution: interactive and non-interactive.
 
-This depends on what the user sents to the program. 
+This depends on what the user sents to the program.
 
 This program detects if the input is sent through the built in echo with pipes | to execute it, which is the non-interactive Shell.
 
-The interactive mode allows us to input and execute commands for an infinite amount of times as long as the shell is running and it's not "exit" or "EOF"(Ctrl + d). 
+The interactive mode allows us to input and execute commands for an infinite amount
+of times as long as the shell is running and it's not "exit" or "EOF"(Ctrl + d).
 This mode has an infinite loop that prints the prompt of our Shell (DANA#) and read any input of the user with getline.
 
 ## Example
@@ -36,7 +37,7 @@ This mode has an infinite loop that prints the prompt of our Shell (DANA#) and r
     /bin/ls
     README.md     built_func.c  hsh           main.c  of_prompt.c  path.c       word_counter.c
     auxiliares.c  executable.c  is_builtin.c  main.h  parsing.c    read_line.c
-    DANA# root@LAPTOP-NC133400:~/simple_shell_test# 
+    DANA# root@LAPTOP-NC133400:~/simple_shell_test#
 
 
 **Interactive mode**
@@ -46,7 +47,7 @@ This mode has an infinite loop that prints the prompt of our Shell (DANA#) and r
     /bin/ls
     README.md     built_func.c  hsh           main.c  of_prompt.c  path.c       word_counter.c
     auxiliares.c  executable.c  is_builtin.c  main.h  parsing.c    read_line.c
-    DANA# 
+    DANA#
 
 
 ## Licence

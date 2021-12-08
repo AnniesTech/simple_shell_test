@@ -16,12 +16,12 @@ It's a command line interpreter that reads lines from either a file or the termi
 .SH USAGE
 All the files are to be compiled on Ubuntu 14.04 LTS.
 You must download all the files contained in the project repository in order for this program to work.
-This program must be compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o 
+This program must be compiled with gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o
 
 .SH EXECUTION
 This Shell has 2 modes of execution: interactive and non-interactive.
 
-This depends on what the user sents to the program. 
+This depends on what the user sents to the program.
 
 This program detects if the input is sent through the built in echo with pipes | to execute it, which is the non-interactive Shell.
 
@@ -48,7 +48,7 @@ DANA# 1
 
 README.md built_func.c  hsh main.c  of_prompt.c  path.c  word_counter.c auxiliares.c  executable.c  is_builtin.c  main.h  parsing.c    read_line.c
 
-DANA# root@LAPTOP-NC133400:~/simple_shell_test# 
+DANA# root@LAPTOP-NC133400:~/simple_shell_test#
 
 .SH Interactive mode
 

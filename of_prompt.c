@@ -18,7 +18,7 @@ void prompt(void)
 			write(STDOUT_FILENO, string, _strlen(string));
 		}
 		str = read_line();
-		if(*str == '\n' && _strlen(str) == 1)
+		if (*str == '\n' && _strlen(str) == 1)
 		{
 			free(str);
 			continue;
